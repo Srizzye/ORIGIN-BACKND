@@ -13,7 +13,7 @@ main.use(express.json());
 main.use(cookieParser());
 main.use(
   cors({
-    origin: "https://origin-backnd.onrender.com",
+    origin: "http://localhost:5173",
   }),
 );
 
