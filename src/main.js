@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 const main = express();
+const cors = require("cors");
 const AuthRoutes = require("../Routes/AuthRoutes.js");
 const HomeRoutes = require("../Routes/HomeRoutes.js");
 const MenRoutes = require("../Routes/MenRoutes.js");
@@ -10,6 +11,11 @@ const ConnectDB = require("../Database/ConnectDB.js");
 const cookieParser = require("cookie-parser");
 main.use(express.json());
 main.use(cookieParser());
+main.use(
+  cors({
+    origin: "https://origin-backnd.onrender.com",
+  }),
+);
 
 main.listen(process.env.PORT, () =>
   console.log("Server Running In Port", process.env.PORT),
