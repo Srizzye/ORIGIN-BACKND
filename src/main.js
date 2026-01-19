@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const main = express();
 const AuthRoutes = require("../Routes/AuthRoutes.js");
-const HomeRoutes = require("../Routes/homeRoutes.js");
+const HomeRoutes = require("../Routes/HomeRoutes.js");
 const MenRoutes = require("../Routes/MenRoutes.js");
 const WomenRoutes = require("../Routes/WomenRoutes.js");
 const ConnectDB = require("../Database/ConnectDB.js");
@@ -12,7 +12,7 @@ main.use(express.json());
 main.use(cookieParser());
 
 main.listen(process.env.PORT, () =>
-  console.log("Server Running In Port", process.env.PORT)
+  console.log("Server Running In Port", process.env.PORT),
 );
 
 ConnectDB();
